@@ -1,4 +1,6 @@
 transparency = 0.5
+image_offset_x = 0
+image_offset_y = 0
 
 import win32api
 import win32gui
@@ -49,7 +51,7 @@ def update_image(image_pos_x=0, image_pos_y=0, image_transparency=0.5):
     canvas.create_image(((monitor_width // 2) - image_width // 2) + image_pos_x, ((monitor_height // 2) - image_height // 2) + image_pos_y, anchor='nw', image=image)
 
 while True:
-    update_image(image_pos_x=0, image_pos_y=0, image_transparency=transparency)
+    update_image(image_pos_x=image_offset_x, image_pos_y=image_offset_y, image_transparency=transparency)
     overlay.update()
 
 print("EOS")
